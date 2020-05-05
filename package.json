@@ -5,8 +5,10 @@
   "main": "index.js",
   "scripts": {
     "test": "jest",
+    "poststart": "yarn eslint . --ext .js",
     "test:watch": "jest --watch",
-    "eslint": "./node_modules/.bin/eslint \"./**/*.js\""
+    "eslint": "./node_modules/.bin/eslint \"./**/*.js\"",
+    "start:rest": "nodemon ./api/index.js"
   },
   "author": "",
   "license": "ISC",
