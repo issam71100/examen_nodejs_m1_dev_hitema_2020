@@ -17,6 +17,7 @@ module.exports.digestAuth = (request, response, next) => {
 
     const authentication = decoded.split(':');
 
+    console.log( authentication[0],  authentication[1]);
     const isValid = authentication[0] === 'node'
         && authentication[1] ===  sha1Encode('password');
     
