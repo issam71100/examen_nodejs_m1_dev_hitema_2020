@@ -8,7 +8,8 @@
     "poststart": "yarn eslint . --ext .js",
     "test:watch": "jest --watch",
     "eslint": "./node_modules/.bin/eslint \"./**/*.js\"",
-    "start:rest": "nodemon ./api/index.js"
+    "start:rest": "node ./api/index.js",
+    "start:websocket": "node ./websocket/index.js"
   },
   "author": "",
   "license": "ISC",

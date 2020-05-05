@@ -14,9 +14,10 @@ webSocketServer.on('connection', webSocket => {
         });
     };
 
-    history.forEach(message => {
-        webSocket.send(message)
-    })
+    // history.forEach(message => {
+    //     webSocket.send(message)
+    // })
+    webSocket.send(JSON.stringify(history));
 });
 
 module.exports = webSocketServer;

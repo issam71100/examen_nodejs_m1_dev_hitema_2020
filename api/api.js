@@ -25,15 +25,15 @@ v1.get('/people', async (request, response) => {
 // Update People
 v1.put("/people/:id", (request, response) => {
     const HTTP_STATUS_OK = 200;
-    const HTTP_STATUS_BAD_REQUEST = 400;
+    const HTTP_STATUS_NOT_FOUND = 404;
 
     try {
       const id = request.params.id;
       const people = request.body;
       const updated_people_id = peopleService.updatePeople(id, people);
-      return updated_people_id ? response.sendStatus(HTTP_STATUS_OK) : response.sendStatus(HTTP_STATUS_BAD_REQUEST);
+      return updated_people_id ? response.sendStatus(HTTP_STATUS_OK) : response.sendStatus(HTTP_STATUS_NOT_FOUND);
     } catch (error) {
-      response.sendStatus(HTTP_STATUS_BAD_REQUEST);
+      response.sendStatus(HTTP_STATUS_NOT_FOUND);
     }
   });
 
